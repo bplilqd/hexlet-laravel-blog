@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Article extends Model
 {
     use HasFactory;
+    static function test32()
+    {
+        return [
+            'test',
+            'token=)',
+        ];
+    }
 }
