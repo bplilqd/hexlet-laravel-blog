@@ -27,7 +27,8 @@ Route::get('about', [PageController::class, 'about'])->name('about');
 // Название сущности в URL во множественном числе, контроллер в единственном
 Route::get('articles', [ArticleController::class, 'index'])
   ->name('articles.index'); // имя маршрута, нужно для того, чтобы не создавать ссылки руками
-
+Route::get('articles/{id}', [ArticleController::class, 'show'])
+  ->name('articles.show');
 // Route::get('articles', function () {
 //     $test = App\Models\Article::test32();
 //     $articles = App\Models\Article::all();
