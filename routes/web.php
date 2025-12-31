@@ -25,6 +25,13 @@ Route::get('about', [PageController::class, 'about'])->name('about');
 // })->name('about');
 Route::get('articles/search', [ArticleController::class, 'search'])
   ->name('articles.search');
+  // Обработчик данных формы
+  // POST-запрос
+Route::post('articles', [ArticleController::class, 'store'])
+  ->name('articles.store');
+// Создание записи
+Route::get('articles/create', [ArticleController::class, 'create'])
+  ->name('articles.create');
 // Название сущности в URL во множественном числе, контроллер в единственном
 Route::get('articles', [ArticleController::class, 'index'])
   ->name('articles.index'); // имя маршрута, нужно для того, чтобы не создавать ссылки руками
