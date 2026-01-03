@@ -14,8 +14,8 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <script src="{{ asset('js/app.js') }}"></script>
 </head>
-
-<body style="background-color: #333; color: LightGray;">
+<!-- style="background-color: #333; color: LightGray;" -->
+<body data-bs-theme="dark">
     <div class="container mt-4">
         <a href="{{ route('articles.index') }}">Статьи</a>
         <a href="{{ route('articles.create') }}">Добавить статью</a>

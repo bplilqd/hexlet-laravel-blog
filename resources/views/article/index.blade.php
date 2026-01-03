@@ -10,6 +10,6 @@
         <div>Id: {{$article->id}} <a href="/articles/{{$article->id}}/edit">Редактировать сатью</a></div>
     @endforeach
     <div class="mt-4"> <!-- Добавить отступ сверху -->
-        {{$articles->links()}}
+        {{ $articles->links('vendor.pagination.bootstrap-5') }}
     </div>
 @endsection
