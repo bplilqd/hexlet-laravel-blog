@@ -9,5 +9,7 @@
         <div>{{Str::limit($article->body, 150)}}</div>
         <div>Id: {{$article->id}} <a href="/articles/{{$article->id}}/edit">Редактировать сатью</a></div>
     @endforeach
-    {{$articles->links()}}
+    <div class="mt-4"> <!-- Добавить отступ сверху -->
+        {{$articles->links()}}
+    </div>
 @endsection

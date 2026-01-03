@@ -9,6 +9,6 @@
 @endif
 
 {{  html()->label('Имя', 'name') }}
-{{  html()->input('text', 'name') }}
+{{  html()->input('text', 'name')->class('form-control') }}
 {{  html()->label('Содержание', 'body') }}
-{{  html()->textarea('body') }}
+{{  html()->textarea('body')->class('form-control') }}

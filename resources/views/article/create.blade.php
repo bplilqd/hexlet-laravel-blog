@@ -3,6 +3,6 @@
 @section('content')
 {{ html()->modelForm($article, 'POST', route('articles.store'))->open() }}
     @include('article.form')
-    {{ html()->submit('Создать') }}
+    {{ html()->submit('Создать')->class('btn btn-primary') }}
 {{ html()->closeModelForm() }}
 @endsection
