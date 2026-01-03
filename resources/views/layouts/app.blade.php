@@ -12,7 +12,7 @@
     <body style="background-color: #333; color: LightGray;">
         <div class="container mt-4">
             <a href="{{ route('articles.index') }}">Статьи</a>
-            <a href="{{ route('articles.create') }}">Добавить</a>
+            <a href="{{ route('articles.create') }}">Добавить статью</a>
             <h1>@yield('header')</h1>
             <div>
                 @yield('content')
