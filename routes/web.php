@@ -19,6 +19,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// Метод PATCH
+Route::patch('articles/{id}', [ArticleController::class, 'update'])
+  ->name('articles.update');
 Route::get('about', [PageController::class, 'about'])->name('about');
 // Route::get('about', function () {
 //     return view('about');
@@ -37,6 +40,8 @@ Route::get('articles', [ArticleController::class, 'index'])
   ->name('articles.index'); // имя маршрута, нужно для того, чтобы не создавать ссылки руками
 Route::get('articles/{id}', [ArticleController::class, 'show'])
   ->name('articles.show');
+Route::get('articles/{id}/edit', [ArticleController::class, 'edit'])
+  ->name('articles.edit');
 // Route::get('articles', function () {
 //     $test = App\Models\Article::test32();
 //     $articles = App\Models\Article::all();

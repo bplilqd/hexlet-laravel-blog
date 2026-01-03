@@ -7,6 +7,32 @@ use App\Models\Article;
 
 class ArticleController extends Controller
 {
+
+    public function update(Request $request, $id)
+    {
+        $article = Article::findOrFail($id);
+        $data = $request->validate([
+            // У обновления немного измененная валидация
+            // В проверку уникальности добавляется название поля и id текущего объекта
+            // Если этого не сделать, Laravel будет ругаться, что имя уже существует
+            'name' => "required|unique:articles,name,{$article->id}",
+            'body' => 'required|min:100',
+        ]);
+
+        // Может получиться много кода!
+        //$article->name = $request->input('name');
+        //$article->body = $request->input('body');
+        //mass-assignment
+        $article->fill($data);
+        $article->save();
+        return redirect()
+            ->route('articles.index');
+    }
+    public function edit($id)
+    {
+        $article = Article::findOrFail($id);
+        return view('article.edit', compact('article'));
+    }
     // Здесь нам понадобится объект запроса для извлечения данных
     public function store(Request $request)
     {
@@ -28,7 +54,7 @@ class ArticleController extends Controller
         return redirect()
             ->route('articles.index');
     }
-        // Вывод формы
+    // Вывод формы
     public function create()
     {
         // Передаем в шаблон вновь созданный объект. Он нужен для вывода формы
